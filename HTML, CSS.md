@@ -38,7 +38,7 @@
 
 ```html
 <p>Парный тег с текстом</p>
-<img src="cat.jpg" alt="Кот">
+<img src="cat.png" alt="Кот">
 <br>
 ```
 Общая схема:
@@ -75,7 +75,7 @@
   Пример сайта
 </a>
 
-<img src="images/cat.jpg" alt="Рыжий кот" width="200">
+<img src="images/cat.png" alt="Рыжий кот" width="200">
 
 <p id="intro" class="text important">Текст с id и классами</p>
 ```
@@ -172,7 +172,7 @@
     <section id="about">
       <h2>Обо мне</h2>
       <p>Я учусь <strong>HTML</strong> и <em>CSS</em>.</p>
-      <img src="images/cat.jpg" alt="Рыжий кот" width="200">
+      <img src="images/cat.png" alt="Рыжий кот" width="200">
       <ul>
         <li>HTML</li>
         <li>CSS</li>
@@ -181,7 +181,7 @@
   </main>
 
   <footer id="contacts">
-    <p>Связаться: <a href="mailto:test@example.com">test@example.com</a></p>
+    <p>Связаться: <a href="mailto:admin@css.com">admin@css.com</a></p>
   </footer>
 </body>
 </html>

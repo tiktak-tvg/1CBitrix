@@ -186,6 +186,9 @@
 </body>
 </html>
 ```
+
+<img width="229" height="536" alt="image" src="https://github.com/user-attachments/assets/83a41861-e9c6-4647-8577-f5029de406bb" />
+
 #### Знакомство с CSS
 Описание: CSS — язык стилей. Он описывает, как HTML-элементы выглядят: цвет, шрифт, отступы, рамки, расположение.
 

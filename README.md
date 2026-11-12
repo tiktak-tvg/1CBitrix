@@ -34,5 +34,6 @@
 
 16.Создание сайта
 
+<img width="585" height="709" alt="Семантические теги" src="https://github.com/user-attachments/assets/9e6ee548-8f6e-421b-90a1-f33e408f4409" />
 
 

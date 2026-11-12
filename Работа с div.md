@@ -396,6 +396,9 @@ id должен быть уникальным. Для повторяющихся
     .hidden {
       display: none;
     }
+    .highlight{
+	  font-weight: bold; 
+	}
   </style>
 </head>
 <body>
@@ -442,6 +445,10 @@ id должен быть уникальным. Для повторяющихся
   <h2>5. Скрытый блок</h2>
   <div class="hidden">Этот блок не отображается (display: none)</div>
   <p>Скрытый блок выше есть в HTML, но не виден.</p>
+
+  <div class="card">
+    <p>Текст с <span class="highlight">выделенным словом</span> внутри.</p>
+  </div>
 
 </body>
 </html>

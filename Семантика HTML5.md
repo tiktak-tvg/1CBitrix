@@ -173,3 +173,132 @@ SEO (Поисковики): Google и Яндекс лучше понимают, 
 Доступность (Accessibility): Слепые пользователи используют программы-скринридеры. Они могут нажать горячую клавишу и сразу перейти к тегу ``<main>``, пропустив надоедливое меню.
 
 Читаемость кода: Разработчику не нужно всматриваться в классы ``<div class="main-content">``, он сразу видит тег ``<main>``.
+
+Пример семантики
+
+#### 1. HTML-код (index.html)
+Здесь мы используем теги по их прямому смыслу. Обратите внимание, что тег <nav> находится внутри <header>, так как навигация — это часть шапки сайта.
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Семантическая разметка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout-wrapper">
+    
+    <!-- ШАПКА (Содержит текст и навигацию) -->
+    <header>
+      <div class="header-text">HEADER</div>
+      <nav>NAV</nav>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main>
+      <div class="main-title">MAIN</div>
+      <div class="sections-container">
+        <section>SECTION</section>
+        <section>SECTION</section>
+      </div>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer>FOOTER</footer>
+
+  </div>
+
+</body>
+</html>
+```
+#### 2. CSS-код (style.css)
+Чтобы расставить блоки именно так, как на картинке, мы используем display: flex.
+```css
+/* Сброс базовых отступов для удобства */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Обертка для всего макета, чтобы задать отступы между блоками */
+.layout-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Расстояние между Header, Main и Footer */
+}
+
+/* ================= HEADER ================= */
+header {
+  border: 2px solid #3b82f6; /* Синяя рамка */
+  display: flex;
+  padding: 15px;
+  align-items: center;
+}
+
+.header-text {
+  flex: 1; /* Занимает 1/3 ширины */
+  text-align: center;
+  font-weight: bold;
+}
+
+nav {
+  flex: 2; /* Занимает 2/3 ширины */
+  border: 2px solid #eab308; /* Желтая рамка */
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ================= MAIN ================= */
+main {
+  border: 2px solid #10b981; /* Зеленая рамка */
+  padding: 15px;
+}
+
+.main-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+/* Контейнер для секций (Flexbox ставит их в один ряд) */
+.sections-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Расстояние между двумя SECTION */
+  margin-bottom: 10px;
+}
+
+section {
+  border: 2px solid #f97316; /* Оранжевая рамка */
+  width: 250px;
+  height: 150px;
+  display: flex;
+  align-items: center; /* Центрируем текст по вертикали */
+  justify-content: center; /* Центрируем текст по горизонтали */
+  font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  border: 2px solid #3b82f6; /* Синяя рамка */
+  padding: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+```
+
+<img width="874" height="480" alt="image" src="https://github.com/user-attachments/assets/baa9fb9a-d8a3-4353-8b6e-5fd970fe3294" />

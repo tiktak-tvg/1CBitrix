@@ -302,3 +302,240 @@ footer {
 ```
 
 <img width="874" height="480" alt="image" src="https://github.com/user-attachments/assets/baa9fb9a-d8a3-4353-8b6e-5fd970fe3294" />
+
+##### Вот готовый пример, который в точности повторяет дизайн со скриншота. Я использовал семантические теги (<header>, <nav>, <main>, <article>, <aside>, <footer>) и CSS-технологию Flexbox для создания двух колонок (основной контент и боковая панель).
+
+Сохраните этот код в файл index.html и откройте в браузере.
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог веб-разработчика</title>
+  <style>
+    /* --- БАЗОВЫЕ СТИЛИ --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Похожий шрифт */
+      background-color: #e8ebf0; /* Светло-серый фон страницы */
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* Общий контейнер, центрирующий контент */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* Отступы между крупными блоками */
+    }
+
+    /* Общие стили для темных блоков (шапка, меню, подвал) */
+    .dark-block {
+      background-color: #2c3e50; /* Темно-синий цвет */
+      color: white;
+      border-radius: 8px;
+    }
+
+    /* --- ШАПКА --- */
+    header {
+      padding: 30px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 16px;
+      color: #d1d8e0;
+    }
+
+    /* --- НАВИГАЦИЯ --- */
+    nav {
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center; /* Центрируем ссылки */
+      gap: 30px; /* Расстояние между ссылками */
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* --- ОСНОВНОЙ КОНТЕНТ (Flexbox для двух колонок) --- */
+    main {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start; /* Колонки не растягиваются по высоте без нужды */
+    }
+
+    /* Левая колонка (Контент) */
+    .content-area {
+      flex: 2.5; /* Занимает больше места */
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+    }
+
+    .content-area h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    /* Карточка статьи */
+    article {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      border-left: 4px solid #3498db; /* Синяя полоса слева */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02); /* Легкая тень */
+    }
+
+    article h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    article p {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    article time {
+      font-size: 13px;
+      color: #888;
+    }
+
+    /* Правая колонка (Сайдбар) */
+    .sidebar-area {
+      flex: 1; /* Занимает меньше места */
+      background-color: #f0f6f9; /* Светло-голубой фон */
+      border-radius: 8px;
+      padding: 25px;
+    }
+
+    .widget {
+      margin-bottom: 30px;
+    }
+
+    .widget:last-child {
+      margin-bottom: 0;
+    }
+
+    .widget h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .widget p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* --- ПОДВАЛ --- */
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    /* Адаптивность для мобильных телефонов (чтобы колонки вставали друг под друга) */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+      .content-area, .sidebar-area {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- СЕМАНТИЧЕСКАЯ ШАПКА -->
+    <header class="dark-block">
+      <h1>Блог веб-разработчика</h1>
+      <p>Учим HTML и CSS вместе</p>
+    </header>
+
+    <!-- СЕМАНТИЧЕСКАЯ НАВИГАЦИЯ -->
+    <nav class="dark-block">
+      <a href="#">Главная</a>
+      <a href="#">Статьи</a>
+      <a href="#">Обо мне</a>
+    </nav>
+
+    <!-- СЕМАНТИЧЕСКИЙ ОСНОВНОЙ КОНТЕНТ -->
+    <main>
+      
+      <!-- Левая колонка -->
+      <section class="content-area">
+        <h2>Последние записи</h2>
+        
+        <article>
+          <h3>Что такое семантика?</h3>
+          <p>Семантика — это использование тегов по их прямому назначению.</p>
+          <time datetime="2024-05-20">20 мая 2024</time>
+        </article>
+
+        <article>
+          <h3>Как работает CSS?</h3>
+          <p>CSS отвечает за внешний вид наших HTML-страниц.</p>
+          <time datetime="2024-05-18">18 мая 2024</time>
+        </article>
+      </section>
+
+      <!-- Правая колонка -->
+      <aside class="sidebar-area">
+        <div class="widget">
+          <h3>Об авторе</h3>
+          <p>Привет! Меня зовут Иван, я изучаю фронтенд.</p>
+        </div>
+        
+        <div class="widget">
+          <h3>Реклама</h3>
+          <p>Здесь могла быть ваша реклама.</p>
+        </div>
+      </aside>
+
+    </main>
+
+    <!-- СЕМАНТИЧЕСКИЙ ПОДВАЛ -->
+    <footer class="dark-block">
+      <p>&copy; 2024 Блог веб-разработчика. Все права защищены.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
+```
+
+<img width="974" height="749" alt="image" src="https://github.com/user-attachments/assets/07966c08-8526-461a-afbb-45b70d2d7adc" />
